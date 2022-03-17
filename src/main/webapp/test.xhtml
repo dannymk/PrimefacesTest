@@ -13,16 +13,16 @@
 		<h1>#{testView.hello}</h1>
 		<h:form id="frmTest">
 
-			<p:panelGrid columns="2">
-				<p:outputLabel id="playerLabel" value="Selected player: #{testView.selected.name}" />
+			<p:panelGrid id="playerPanel" columns="2">
+				<p:outputLabel value="Selected player: #{testView.selected.name}" />
 				
-				<p:selectOneMenu id="playerContainer" value="#{testView.selected}" var="p" >
+				<p:selectOneMenu id="playerContainer" value="#{testView.selected}" var="p" converter="playerConverter" >
 					<f:selectItem itemLabel="Select One" itemValue="" />
 					<f:selectItems value="#{testView.available}" var="actual" itemLabel="#{actual.name}" itemValue="#{actual}" />
 					<p:column>
 							#{p.name}
 					</p:column>
-					<p:ajax event="valueChange" update="playerLabel" />
+					<p:ajax event="valueChange" update="playerPanel" />
 				</p:selectOneMenu>			  
 
 			</p:panelGrid>
