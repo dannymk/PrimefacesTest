@@ -28,7 +28,7 @@ public class TestView implements Serializable {
         this.available = service.getAvailable();
 		  
     }
-
+	 
 	/**
 	 * @return the available
 	 */
